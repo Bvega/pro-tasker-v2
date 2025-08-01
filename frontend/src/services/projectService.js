@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/projects/';
+const API_URL = 'https://pro-tasker-v2-backend.onrender.com/api/projects/';
 const getToken = () => localStorage.getItem('token');
 
 // Create a new project
