@@ -17,7 +17,7 @@ const app = express();
 // ** THE FIX IS HERE **
 // Configure CORS to allow requests specifically from your frontend
 app.use(cors({
-  origin: 'http://localhost:5173' // Update the port to match your frontend
+  origin: process.env.CORS_ORIGIN  // Update the port to match your frontend
 }));
 
 // Middleware to parse incoming JSON requests
