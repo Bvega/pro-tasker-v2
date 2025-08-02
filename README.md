@@ -1,10 +1,4 @@
-Of course. Here is a simple and concise `README.md` file for your project, following the required instructions.
 
-You can copy this entire content and paste it into the `README.md` file in the root of your `pro-tasker-v2` project folder.
-
------
-
-````markdown
 # Pro-Tasker V2
 
 Pro-Tasker is a full-stack project management application built with the MERN stack (MongoDB, Express, React, Node.js). It provides a clean and modern interface for users to register, log in, and manage their projects and tasks.
