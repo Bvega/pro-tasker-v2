@@ -15,9 +15,9 @@ connectDB();
 const app = express();
 
 // ** THE FIX IS HERE **
-// Configure CORS to allow requests specifically from your frontend
+// For local development, we explicitly allow our local frontend's URL.
 app.use(cors({
-  origin: process.env.CORS_ORIGIN  // Update the port to match your frontend
+  origin: 'http://localhost:5173'
 }));
 
 // Middleware to parse incoming JSON requests
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 });
 
 // Define the port from environment variables or default to 5001
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 
 // Start the server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

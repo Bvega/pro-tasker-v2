@@ -1,0 +1,50 @@
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  /* This is the key to making it fit perfectly under the navbar.
+     100vh is the full height of the viewport. 
+     70px is the height of your navbar. */
+  height: calc(100vh - 70px);
+  width: 100%;
+  
+  color: var(--text-light); /* We defined this in index.css */
+  
+  /* This applies the background image and a semi-transparent dark overlay */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('/hero-background.jpg'); /* This path works because the image is in the /public folder */
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: var(--spacing-lg);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-cta-button {
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--spacing-sm);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-cta-button:hover {
+  background-color: var(--secondary-color);
+}

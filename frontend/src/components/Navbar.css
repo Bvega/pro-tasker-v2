@@ -1,20 +1,19 @@
-/* src/components/Navbar.css */
 .navbar {
   background: var(--primary-color);
-  height: 80px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 999; /* This is the crucial line */
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
   width: 100%;
   max-width: 1500px;
   padding: 0 24px;
@@ -24,37 +23,36 @@
   color: var(--text-light);
   justify-self: start;
   cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
   list-style: none;
-  text-align: center;
 }
 
 .nav-item {
-  height: 80px;
+  height: 70px;
 }
 
 .nav-links {
   color: var(--text-light);
   display: flex;
   align-items: center;
-  text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .nav-links:hover {
-  border-bottom: 4px solid var(--accent-color);
-  transition: all 0.2s ease-out;
+  color: var(--accent-color);
 }
-/* Add this to the end of Navbar.css */
+
 .nav-links-button {
   background: none;
   border: none;
@@ -66,9 +64,9 @@
   height: 100%;
   display: flex;
   align-items: center;
+  font-weight: 500;
 }
 
 .nav-links-button:hover {
-  border-bottom: 4px solid var(--accent-color);
-  transition: all 0.2s ease-out;
+  color: var(--accent-color);
 }

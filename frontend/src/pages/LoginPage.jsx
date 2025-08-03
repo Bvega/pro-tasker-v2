@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import authService from '../services/authService';
-import './Form.css'; // Reusing the same form styles
+import './Form.css';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { login: authLogin } = useAuth(); // Rename context login to avoid naming conflicts
+  const { login: authLogin } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Clear previous errors
+    setError('');
 
     try {
       const userData = await authService.login({ email, password });
-      authLogin(userData.token, userData); // Update global auth state
-      navigate('/dashboard'); // Redirect to dashboard on successful login
+      authLogin(userData.token, userData);
+      navigate('/dashboard');
     } catch (err) {
       setError('Failed to log in. Please check your credentials.');
       console.error(err);
@@ -52,6 +52,7 @@ const LoginPage = () => {
         </div>
         <button type="submit" className="submit-btn">Login</button>
         <p style={{ textAlign: 'center', marginTop: '1rem' }}>
+          {/* THE FIX IS HERE: Ensure the path is "/register" */}
           Don't have an account? <Link to="/register">Register here</Link>
         </p>
       </form>

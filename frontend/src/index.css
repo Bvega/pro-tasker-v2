@@ -1,11 +1,24 @@
-/* src/index.css */
 :root {
-  --primary-color: #273F4F;   /* Dark Blue */
-  --secondary-color: #447D9B; /* Lighter Blue */
-  --accent-color: #FE7743;    /* Orange */
-  --light-gray: #D7D7D7;      /* Light Gray */
+  /* Colors */
+  --primary-color: #273F4F;
+  --secondary-color: #447D9B;
+  --accent-color: #FE7743;
+  --light-gray: #D7D7D7;
   --text-light: #ffffff;
   --text-dark: #333333;
+
+  /* Fonts */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+
+  /* Spacing */
+  --spacing-unit: 8px;
+  --spacing-xs: calc(var(--spacing-unit) * 0.5); /* 4px */
+  --spacing-sm: var(--spacing-unit);             /* 8px */
+  --spacing-md: calc(var(--spacing-unit) * 2);   /* 16px */
+  --spacing-lg: calc(var(--spacing-unit) * 3);   /* 24px */
+  --spacing-xl: calc(var(--spacing-unit) * 5);   /* 40px */
 }
 
 * {
@@ -15,13 +28,21 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f7f6; /* A neutral light background */
   color: var(--text-dark);
+  
+  /* ** THIS IS THE NEW BACKGROUND STYLE ** */
+  /* This creates a semi-transparent white overlay on your image */
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)),
+              url('/global-bg.png');
+  
+  /* This ensures the image covers the whole page */
+  background-size: cover;
+  
+  /* This fixes the background so it doesn't scroll with the content */
+  background-attachment: fixed;
 }
 
 a {

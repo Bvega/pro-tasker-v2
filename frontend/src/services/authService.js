@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'https://pro-tasker-v2-backend.onrender.com/api/users/';
+// This line now correctly uses the environment variable
+const API_URL = `${import.meta.env.VITE_API_URL}/api/users/`;
 
 // Login user
 const login = async (userData) => {
@@ -24,10 +25,9 @@ const register = async (userData) => {
   return response.data;
 };
 
-
 const authService = {
   login,
-  register, // Add the new function here
+  register,
 };
 
 export default authService;

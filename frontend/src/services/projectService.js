@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const API_URL = 'https://pro-tasker-v2-backend.onrender.com/api/projects/';
+// This line now correctly uses the environment variable
+const API_URL = `${import.meta.env.VITE_API_URL}/api/projects/`;
 const getToken = () => localStorage.getItem('token');
 
 // Create a new project

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // 1. IMPORT LINK HERE
 import { useAuth } from '../context/AuthContext';
 import authService from '../services/authService';
 import './Form.css'; // Reusing the same form styles
@@ -10,7 +10,7 @@ const RegisterPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { login: authLogin } = useAuth(); // We'll use this to log the user in after they register
+  const { login: authLogin } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,8 +18,8 @@ const RegisterPage = () => {
 
     try {
       const userData = await authService.register({ name, email, password });
-      authLogin(userData.token, userData); // Log the new user in immediately
-      navigate('/dashboard'); // Redirect to dashboard
+      authLogin(userData.token, userData);
+      navigate('/dashboard');
     } catch (err) {
       setError('Failed to register. The email may already be in use.');
       console.error(err);
@@ -62,6 +62,10 @@ const RegisterPage = () => {
           />
         </div>
         <button type="submit" className="submit-btn">Register</button>
+        {/* 2. ADD THE LINK JSX HERE */}
+        <p style={{ textAlign: 'center', marginTop: '1rem' }}>
+          Already have an account? <Link to="/login">Login here</Link>
+        </p>
       </form>
     </div>
   );
