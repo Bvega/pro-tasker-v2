@@ -17,7 +17,7 @@ const app = express();
 // ** THE FIX IS HERE **
 // For local development, we explicitly allow our local frontend's URL.
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: process.env.CORS_ORIGIN
 }));
 
 // Middleware to parse incoming JSON requests
